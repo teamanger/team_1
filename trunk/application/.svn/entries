@@ -1,0 +1,61 @@
+10
+
+dir
+57
+svn://svn.zedplan.com/opencorephp/trunk/skel/application
+svn://svn.zedplan.com/opencorephp
+
+
+
+2012-07-13T20:55:16.488073Z
+54
+guillermo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+becd62f3-4a40-4c5b-b221-18a890d3a758
+
+models
+dir
+
+logs
+dir
+
+config
+dir
+
+controllers
+dir
+
+scripts
+dir
+
+functions
+dir
+
+classes
+dir
+
+views
+dir
+
+i18n
+dir
+
+locale
+dir
+
+tmp
+dir
+

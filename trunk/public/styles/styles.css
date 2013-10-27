@@ -1,0 +1,17 @@
+
+
+.container_buttons{
+    float: right;
+    margin: 5px;
+    clear: both;
+}
+
+
+.container_form{
+    clear: both;
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
