@@ -1,2 +1,0 @@
-# football
-### a Sails application
