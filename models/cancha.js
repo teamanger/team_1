@@ -3,6 +3,7 @@ var Seq = require('sequelize');
 var seq = require('./conf.js');
 
 var Media = require('./media');
+var Partido = require('./paritdo');
 
 var Cancha = seq.define('cancha',{
 
@@ -32,6 +33,7 @@ var Cancha = seq.define('cancha',{
 });
 
 Cancha.hasMany( Medias, { as : 'Medias', foreignKey : 'cancha_id' } );
+Cancha.hasMany( Partido, { as : 'Partidos', foreignKey : 'cancha_id' } );
 
 
 module.exports = Cancha;

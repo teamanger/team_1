@@ -4,6 +4,16 @@ var seq = require('./conf.js');
 
 var Media = require('./media');
 
+var MsjUser = require('./usuario_mensaje');
+
+var Msj = require('./mensaje');
+
+var Campeonato = require('./campeonato');
+var Equipo = require('./equipo');
+var UsuarioEquipo = require('./usuario_equipo');
+var Partido = require('./partido');
+var Desempenio = require('./desempenio');
+
 var Usuario = seq.define('usuario',{
    
    id : { 
@@ -47,5 +57,10 @@ var Usuario = seq.define('usuario',{
 });
 
 Usuario.hasMany( Media, { as : 'Medias', foreignKey : 'usuario_id' } );
+Usuario.hasMany( Campeonato, { as : 'Campeonatos', foreignKey : 'usuario_id' } );
+Usuario.hasMany ( Msj, { as : "Mensajes", joinTableModel : MsjUser, foreignKey : 'usuario_id' } );
+Usuario.hasMany ( Equipo, { as : "Equipos", joinTableModel : usuario_equipo, foreignKey : 'usuario_id' } );
+Usuario.hasMany ( Partido, { as : "Partidos", joinTableModel : desempenio, foreignKey : 'usuario_id' } );
+
 
 module.exports = Usuario;
