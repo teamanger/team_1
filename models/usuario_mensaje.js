@@ -1,8 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var usuarioMensaje = seq.define('usuario_mensaje',{
+return sequelize.define('usuario_mensaje',{
     
     mensaje_id : {
     	type : Seq.INTEGER,
@@ -14,9 +12,7 @@ var usuarioMensaje = seq.define('usuario_mensaje',{
     }
 },{
 	timestamps: false,
-	tableName : "usuario_mensaje",
-	freezeTableName: true
+	tableName : "usuario_mensaje"
 });
 
-
-module.exports = usuarioMensaje;
+};

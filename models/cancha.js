@@ -1,11 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var Media = require('./media');
-var Partido = require('./paritdo');
-
-var Cancha = seq.define('cancha',{
+return  sequelize.define('cancha',{
 
     id : {
       type : Seq.INTEGER,
@@ -28,12 +23,7 @@ var Cancha = seq.define('cancha',{
     }
 },{
    timestamps: false,
-   tableName : "cancha",
-   freezeTableName: true
+   tableName : "cancha"
 });
 
-Cancha.hasMany( Medias, { as : 'Medias', foreignKey : 'cancha_id' } );
-Cancha.hasMany( Partido, { as : 'Partidos', foreignKey : 'cancha_id' } );
-
-
-module.exports = Cancha;
+}

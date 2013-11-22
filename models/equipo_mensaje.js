@@ -1,25 +1,12 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var equipoMensaje = seq.define('equipo_mensaje',{
+return sequelize.define('equipo_mensaje',{
     
-    mensaje_id : {
-    	type : Seq.INTEGER,
-    	primaryKey : true
-    },
-    usuario_id : {
-        type : Seq.INTEGER,
-        primaryKey : true
-    },
     leido : {
         type : Seq.INTEGER
     }
 },{
 	timestamps: false,
-	tableName : "equipo_mensaje",
-	freezeTableName: true
+	tableName : "equipo_mensaje"
 });
-
-
-module.exports = equipoMensaje;
+};

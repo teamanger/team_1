@@ -1,10 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var usuarioEquipo = require('./usuario_equipo');
-
-var Posicion = seq.define('posicion',{
+return  sequelize.define('posicion',{
     id : {
       type : Seq.INTEGER,
       primaryKey : true
@@ -14,10 +10,6 @@ var Posicion = seq.define('posicion',{
     }
 },{
   timestamps: false,
-  tableName : "posicion",
-  freezeTableName: true
+  tableName : "posicion"
 });
-
-Posicion.hasMany( usuarioEquipo, { as : 'UsuarioEquipos', foreignKey : 'posicion_id' } );
-
-module.exports = Posicion;
+};

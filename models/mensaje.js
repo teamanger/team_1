@@ -1,14 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var MsjUser = require('./usuario_mensaje');
-
-var Usuario = require('./usuario');
-var Equipo = require('./equipo');
-var EquipoMensaje = require('./equipo_mensaje');
-
-var Msj = seq.define('mensaje',{
+return  sequelize.define('mensaje',{
     id : {
     	type : Seq.INTEGER,
     	primaryKey : true
@@ -18,11 +10,6 @@ var Msj = seq.define('mensaje',{
     }
 },{
 	timestamps: false,
-	tableName : "mensaje",
-	freezeTableName: true
+	tableName : "mensaje"
 });
-
-Msj.hasMany(Usuario, { as : 'Usuarios', joinTableModel : MsjUser, foreignKey : 'mensaje_id' });
-Msj.hasMany(Equipo, { as : 'Equipos', joinTableModel : EquipoMensaje, foreignKey : 'mensaje_id' });
-
-module.exports = Msj;
+};

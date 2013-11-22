@@ -1,8 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var Media = seq.define('media',{
+return  sequelize.define('media',{
     id : {
     	type : Seq.INTEGER,
     	primaryKey : true
@@ -28,9 +26,7 @@ var Media = seq.define('media',{
 
 },{
 	timestamps: false,
-	tableName : "media",
-	freezeTableName: true
+	tableName : "media"
 });
 
-
-module.exports = Media;
+};

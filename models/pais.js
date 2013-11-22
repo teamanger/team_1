@@ -1,10 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var Provincia = require('./provincia');
-
-var Pais = seq.define('pais',{
+return sequelize.define('pais',{
     id : {
     	type : Seq.INTEGER,
     	primaryKey : true
@@ -14,10 +10,7 @@ var Pais = seq.define('pais',{
     }
 },{
 	timestamps: false,
-	tableName : "pais",
-	freezeTableName: true
+	tableName : "pais"
 });
 
-Pais.hasMany( Provincia, { as : 'Provincias', foreignKey : 'pais_id' } );
-
-module.exports = Pais;
+};

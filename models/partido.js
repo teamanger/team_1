@@ -1,15 +1,7 @@
-var Seq = require('sequelize');
-
-var seq = require('./conf.js');
-
-var Media = require('./media');
-var EquipoPartido = require('./equipo_partido');
-var Equipo = require('./equipo');
-var Usuario = require('./usuario');
-var Desempenio = require('./desempenio');
+module.exports = function(sequelize, Seq){
 
 
-var Partido = seq.define('partido',{
+return sequelize.define('partido',{
    
    id : { 
        type : Seq.INTEGER, 
@@ -26,13 +18,6 @@ var Partido = seq.define('partido',{
    }
 } ,{
 	timestamps: false,
-	tableName : "partido",
-	freezeTableName: true
+	tableName : "partido"
 });
-
-
-Partido.hasMany( Media, { as : 'Medias', foreignKey : 'partido_id' } );
-Partido.hasMany( Equipo, { as: 'Equipos', foreignKey :'partido_id', joinTableModel : Equipo  } );
-Partido.hasMany( Usuario, { as : 'Usuarios', foreignKey : 'partido_id', joinTableModel : Desempenio } );
-
-module.exports = Partido;
+};

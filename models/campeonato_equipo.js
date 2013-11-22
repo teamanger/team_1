@@ -1,8 +1,6 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var campeonatoEquipo = seq.define('campeonato_equipo',{
+return  sequelize.define('campeonato_equipo',{
     
     campeonato_id : {
     	type : Seq.INTEGER,
@@ -17,9 +15,6 @@ var campeonatoEquipo = seq.define('campeonato_equipo',{
     }
 },{
 	timestamps: false,
-	tableName : "campeonato_equipo",
-	freezeTableName: true
+	tableName : "campeonato_equipo"
 });
-
-
-module.exports = campeonatoEquipo;
+};

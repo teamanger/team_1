@@ -1,17 +1,7 @@
-var Seq = require('sequelize');
-
-var seq = require('./conf.js');
+module.exports = function(sequelize, Seq){
 
 
-var Desempenio = seq.define('desempenio',{
-    usuario_id : {
-    	type : Seq.INTEGER,
-    	primaryKey : true
-    },
-    partido_id : {
-        type : Seq.INTEGER,
-        primaryKey : true
-    },
+return  sequelize.define('desempenio',{
     goles : {
     	type : Seq.INTEGER
     },
@@ -23,9 +13,7 @@ var Desempenio = seq.define('desempenio',{
     }
 },{
 	timestamps: false,
-	tableName : "desempenio",
-	freezeTableName: true
+	tableName : "desempenio"
 });
 
-
-module.exports = Desempenio;
+}

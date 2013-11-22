@@ -1,14 +1,11 @@
-var Seq = require('sequelize');
+module.exports = function(sequelize, Seq){
 
-var seq = require('./conf.js');
-
-var equipoPartido = seq.define('equipo_partido',{
-    
+return sequelize.define('equipoPartido',{
     equipo_id : {
     	type : Seq.INTEGER,
     	primaryKey : true
     },
-    usuario_id : {
+    partido_id : {
         type : Seq.INTEGER,
         primaryKey : true
     },
@@ -23,9 +20,7 @@ var equipoPartido = seq.define('equipo_partido',{
     }
 },{
 	timestamps: false,
-	tableName : "equipo_partido",
-	freezeTableName: true
+	tableName : "equipo_partido"
 });
 
-
-module.exports = equipoPartido;
+};
