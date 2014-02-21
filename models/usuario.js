@@ -11,6 +11,9 @@ return sequelize.define('usuario',{
    	   	 isEmail : true
    	   }
    },
+   nombre : {
+         type : Seq.STRING(100)
+   },
    password : {
    	 type : Seq.STRING(100),
    	 validate : {
@@ -18,7 +21,8 @@ return sequelize.define('usuario',{
    	 }
    },
    estado : {
-   	  type : Seq.INTEGER
+   	  type : Seq.INTEGER,
+        defaultValue : true
    },
    fecha : {
    	  type : Seq.DATE
